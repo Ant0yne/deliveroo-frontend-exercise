@@ -8,10 +8,34 @@ import Main from "./components/Main";
 import "./App.css";
 
 function App() {
+	const [data, setData] = useState();
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const response = await axios.get(
+				"https://site--deliver-exercise--spyfkvx5gdbh.code.run/"
+			);
+			setData(response.data);
+
+			setIsLoading(false);
+		};
+
+		fetchData();
+	}, []);
+
 	return (
 		<>
-			<Header />
-			<Main />
+			{isLoading === true ? (
+				<div>
+					<h1>Chargement en cours...</h1>
+				</div>
+			) : (
+				<>
+					<Header />
+					<Main data={data} />
+				</>
+			)}
 		</>
 	);
 }

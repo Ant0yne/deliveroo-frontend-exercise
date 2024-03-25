@@ -3,11 +3,15 @@ import Menu from "../Menu";
 
 import "./main.css";
 
-const Main = () => {
+const Main = ({ data }) => {
+	const { restaurant, categories } = data;
+
 	return (
 		<>
-			<Title />
-			<Menu />
+			<main>
+				<Title restaurant={restaurant} />
+				<Menu categories={categories} />
+			</main>
 		</>
 	);
 };
