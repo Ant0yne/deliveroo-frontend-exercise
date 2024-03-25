@@ -1,0 +1,8 @@
+header {
+	border-bottom: 1px solid var(--light-grey);
+	padding: 8px;
+}
+
+header > img {
+	height: 40px;
+}

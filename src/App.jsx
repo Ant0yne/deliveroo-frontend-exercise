@@ -1,14 +1,17 @@
-import { useState } from "react";
+import axios from "axios";
+
+import { useState, useEffect } from "react";
+
+import Header from "./components/Header";
+import Main from "./components/Main";
+
 import "./App.css";
 
 function App() {
-	const [count, setCount] = useState(0);
-	const test = "";
-
 	return (
 		<>
-			<i className="icon-filter"></i>
-			<p>Test</p>
+			<Header />
+			<Main />
 		</>
 	);
 }
