@@ -15,7 +15,7 @@ const Meal = ({ meal }) => {
 					)}
 				</div>
 			</div>
-			<img src={meal.picture} alt={meal.title} />
+			{meal.picture && <img src={meal.picture} alt={meal.title} />}
 		</>
 	);
 };

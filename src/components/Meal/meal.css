@@ -1,7 +1,35 @@
-.price > div {
+.meal {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	background-color: var(--white);
+	gap: 15px;
+}
+
+h3 {
+	font-family: "IBM Plex Sans", sans-serif;
+	font-size: 1.6rem;
+	margin-bottom: 5px;
+}
+
+.meal > img {
+	width: 100%;
+}
+
+.price {
+	margin-top: 10px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
 }
 
 .price p {
 	color: var(--orange);
 	font-weight: bold;
+}
+
+.price > span {
+	font-family: "IBM Plex Sans", sans-serif;
+	color: var(--grey);
+	font-size: 1.6rem;
 }

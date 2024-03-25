@@ -6,13 +6,15 @@ const Category = ({ categ }) => {
 	return (
 		<>
 			<h2>{categ.name}</h2>
-			{categ.meals.map((meal) => {
-				return (
-					<div key={meal.id}>
-						<Meal meal={meal} />
-					</div>
-				);
-			})}
+			<div className="meals">
+				{categ.meals.map((meal) => {
+					return (
+						<div key={meal.id} className="meal">
+							<Meal meal={meal} />
+						</div>
+					);
+				})}
+			</div>
 		</>
 	);
 };

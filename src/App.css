@@ -1,9 +1,11 @@
 :root {
 	--light-grey: #d3d3d3;
 	--grey: #868686;
+	--white-grey: #f3f5f5;
 	--white: #fff;
 	--black: #000;
 	--orange: #ffa500;
+	--purple: #8f3c82;
 }
 
 * {
@@ -16,7 +18,7 @@ html {
 
 body {
 	font-family: "IBM Plex Sans", sans-serif;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	line-height: 22px;
 	/* padding: 10px; */
 }
@@ -38,16 +40,11 @@ button {
 p {
 	color: var(--grey);
 	text-align: justify;
-	margin-bottom: 30px;
 }
 
 a {
 	color: var(--black);
 	text-decoration: none;
-}
-
-a,
-span {
 	font-weight: bold;
 }
 

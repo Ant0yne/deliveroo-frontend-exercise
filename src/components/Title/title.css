@@ -14,6 +14,10 @@
 	padding: 10px;
 }
 
+#title p {
+	margin-bottom: 30px;
+}
+
 h1 {
 	font-family: "Stratos Deliveroo Web", sans-serif;
 	font-size: 2.5rem;

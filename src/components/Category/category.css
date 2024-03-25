@@ -1,0 +1,12 @@
+.meals {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+h2 {
+	font-family: "Stratos Deliveroo Web", sans-serif;
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 20px 0 20px 10px;
+}

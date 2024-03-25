@@ -3,7 +3,9 @@ import "./shoppingCart.css";
 const ShoppingCart = () => {
 	return (
 		<>
-			<p>shoppingCart</p>
+			<div id="cart">
+				<p>Shopping Cart</p>
+			</div>
 		</>
 	);
 };

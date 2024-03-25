@@ -1,4 +1,5 @@
 #categ-cart {
 	display: flex;
 	flex-direction: column;
+	background-color: var(--white-grey);
 }
