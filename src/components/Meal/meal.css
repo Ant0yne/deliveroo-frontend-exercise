@@ -1,0 +1,7 @@
+.price > div {
+}
+
+.price p {
+	color: var(--orange);
+	font-weight: bold;
+}

@@ -5,7 +5,7 @@ import "./category.css";
 const Category = ({ categ }) => {
 	return (
 		<>
-			<h3>{categ.name}</h3>
+			<h2>{categ.name}</h2>
 			{categ.meals.map((meal) => {
 				return (
 					<div key={meal.id}>

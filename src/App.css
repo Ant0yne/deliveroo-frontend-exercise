@@ -3,6 +3,7 @@
 	--grey: #868686;
 	--white: #fff;
 	--black: #000;
+	--orange: #ffa500;
 }
 
 * {
@@ -32,6 +33,12 @@ html {
 button {
 	font-family: "Roboto", sans-serif;
 	border: none;
+}
+
+p {
+	color: var(--grey);
+	text-align: justify;
+	margin-bottom: 30px;
 }
 
 a {

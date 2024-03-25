@@ -7,7 +7,7 @@ const Title = ({ restaurant }) => {
 				<img src={restaurant.picture} alt="Repas au Pain Quotidien" />
 				<div>
 					<h1>{restaurant.name}</h1>
-					<h2>{restaurant.description}</h2>
+					<p>{restaurant.description}</p>
 				</div>
 			</section>
 		</>
