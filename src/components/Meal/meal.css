@@ -45,7 +45,7 @@ h3 {
 @media (min-width: 768px) {
 	.meal {
 		flex-direction: row;
-		border-radius: 5px;
+		border-radius: 10px;
 		align-items: center;
 		justify-content: space-between;
 	}
