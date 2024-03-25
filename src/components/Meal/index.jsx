@@ -10,12 +10,16 @@ const Meal = ({ meal }) => {
 					<span>{meal.price} €</span>
 					{meal.popular && (
 						<p>
-							<i className="icon-STAR_FILL"></i>Populaire
+							<i className="icon-STAR_FILL"></i> Populaire
 						</p>
 					)}
 				</div>
 			</div>
-			{meal.picture && <img src={meal.picture} alt={meal.title} />}
+			{meal.picture && (
+				<div>
+					<img src={meal.picture} alt={meal.title} />
+				</div>
+			)}
 		</>
 	);
 };

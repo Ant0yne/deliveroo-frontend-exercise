@@ -1,5 +1,13 @@
-#categ-cart {
+.container {
 	display: flex;
 	flex-direction: column;
 	background-color: var(--white-grey);
+}
+
+@media (min-width: 768px) {
+	.container {
+		padding: 0 20px;
+		flex-direction: row;
+		gap: 40px;
+	}
 }

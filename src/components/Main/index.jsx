@@ -9,10 +9,8 @@ const Main = ({ data }) => {
 	return (
 		<>
 			<main>
-				<div className="container">
-					<Title restaurant={restaurant} />
-					<Menu categories={categories} />
-				</div>
+				<Title restaurant={restaurant} />
+				<Menu categories={categories} />
 			</main>
 		</>
 	);

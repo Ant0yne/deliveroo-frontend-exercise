@@ -7,8 +7,10 @@ const Menu = ({ categories }) => {
 	return (
 		<>
 			<section id="categ-cart">
-				<Categories categories={categories} />
-				<ShoppingCart />
+				<div className="container">
+					<Categories categories={categories} />
+					<ShoppingCart />
+				</div>
 			</section>
 		</>
 	);

@@ -5,7 +5,7 @@ import "./categories.css";
 const Categories = ({ categories }) => {
 	return (
 		<>
-			<div>
+			<div id="categories">
 				{categories.map((categ) => {
 					if (categ.meals.length > 0) {
 						return (
@@ -16,6 +16,7 @@ const Categories = ({ categories }) => {
 							</>
 						);
 					}
+					return null;
 				})}
 			</div>
 		</>
