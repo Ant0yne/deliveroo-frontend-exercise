@@ -1,1 +1,8 @@
+main {
+	background-color: var(--white-grey);
+}
 
+main > div {
+	width: 100%;
+	background-color: var(--white);
+}

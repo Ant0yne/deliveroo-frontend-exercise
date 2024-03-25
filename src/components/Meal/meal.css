@@ -40,23 +40,36 @@ h3 {
 	font-size: 1.6rem;
 }
 
-/* ------------- MEDIA 768px ---------------- */
+/* ------------- MEDIA 894px ---------------- */
 
-@media (min-width: 768px) {
+@media (min-width: 894px) {
 	.meal {
 		flex-direction: row;
 		border-radius: 10px;
 		align-items: center;
 		justify-content: space-between;
+		gap: 30px;
 	}
 
 	.meal > div:first-child {
-		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 130px;
 	}
 
 	.meal > div:nth-child(2) {
-		height: 100%;
-		flex: 1;
+		flex-shrink: 0;
+		width: 130px;
+		height: 130px;
+	}
+
+	.meal img {
+		border-radius: 10px;
+	}
+
+	.price {
+		margin-top: 0px;
 	}
 
 	.price > span {
@@ -65,5 +78,15 @@ h3 {
 
 	h3 {
 		font-size: 2rem;
+	}
+}
+
+@media (min-width: 1125px) {
+	.meal {
+		width: calc((100% - 20px) / 2);
+	}
+
+	.meal > div:nth-child(2) {
+		height: 100%;
 	}
 }

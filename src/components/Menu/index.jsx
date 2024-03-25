@@ -8,8 +8,10 @@ const Menu = ({ categories }) => {
 		<>
 			<section id="categ-cart">
 				<div className="container">
-					<Categories categories={categories} />
-					<ShoppingCart />
+					<div id="menu">
+						<Categories categories={categories} />
+						<ShoppingCart />
+					</div>
 				</div>
 			</section>
 		</>

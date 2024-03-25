@@ -9,7 +9,9 @@ const Main = ({ data }) => {
 	return (
 		<>
 			<main>
-				<Title restaurant={restaurant} />
+				<div>
+					<Title restaurant={restaurant} />
+				</div>
 				<Menu categories={categories} />
 			</main>
 		</>
