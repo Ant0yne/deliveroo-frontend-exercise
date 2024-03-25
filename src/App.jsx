@@ -5,7 +5,12 @@ function App() {
 	const [count, setCount] = useState(0);
 	const test = "";
 
-	return <></>;
+	return (
+		<>
+			<i className="icon-filter"></i>
+			<p>Test</p>
+		</>
+	);
 }
 
 export default App;
