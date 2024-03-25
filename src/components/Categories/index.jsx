@@ -1,13 +1,23 @@
 import Category from "../Category";
-import Meal from "../Meal";
 
 import "./categories.css";
 
-const Categories = () => {
+const Categories = ({ categories }) => {
 	return (
 		<>
-			<Category />
-			<Meal />
+			<div>
+				{categories.map((categ) => {
+					if (categ.meals.length > 0) {
+						return (
+							<>
+								<div key={categ.name}>
+									<Category categ={categ} />
+								</div>
+							</>
+						);
+					}
+				})}
+			</div>
 		</>
 	);
 };

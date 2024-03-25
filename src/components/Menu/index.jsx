@@ -3,11 +3,13 @@ import ShoppingCart from "../ShoppingCart";
 
 import "./menu.css";
 
-const Menu = () => {
+const Menu = ({ categories }) => {
 	return (
 		<>
-			<Categories />
-			<ShoppingCart />
+			<section id="categ-cart">
+				<Categories categories={categories} />
+				<ShoppingCart />
+			</section>
 		</>
 	);
 };

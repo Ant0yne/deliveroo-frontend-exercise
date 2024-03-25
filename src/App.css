@@ -1,5 +1,6 @@
 :root {
 	--light-grey: #d3d3d3;
+	--grey: #868686;
 	--white: #fff;
 	--black: #000;
 }
@@ -10,23 +11,23 @@
 
 html {
 	font-size: 62.5%;
-	font-family: "Stratos Deliveroo Web", sans-serif;
 }
 
 body {
+	font-family: "IBM Plex Sans", sans-serif;
 	font-size: 1.6rem;
 	line-height: 22px;
 	/* padding: 10px; */
 }
 
-/* html::-webkit-scrollbar {
+html::-webkit-scrollbar {
 	display: none;
 }
 
 html {
-	-ms-overflow-style: none; 
-	scrollbar-width: none; 
-} */
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
 
 button {
 	font-family: "Roboto", sans-serif;

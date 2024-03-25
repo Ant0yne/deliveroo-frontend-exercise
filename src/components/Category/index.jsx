@@ -1,9 +1,18 @@
+import Meal from "../Meal";
+
 import "./category.css";
 
-const Category = () => {
+const Category = ({ categ }) => {
 	return (
 		<>
-			<p>category</p>
+			<h3>{categ.name}</h3>
+			{categ.meals.map((meal) => {
+				return (
+					<div key={meal.id}>
+						<Meal meal={meal} />
+					</div>
+				);
+			})}
 		</>
 	);
 };
