@@ -1,0 +1,8 @@
+.cart-meal {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cart-meal > div {
+	display: flex;
+}
