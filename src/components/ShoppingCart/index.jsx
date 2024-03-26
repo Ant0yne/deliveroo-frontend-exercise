@@ -1,14 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import CartMeal from "../CartMeal";
 
 import "./shoppingCart.css";
 
+function getWindowSize() {
+	const { innerWidth, innerHeight } = window;
+	return { innerWidth, innerHeight };
+}
+
 const ShoppingCart = ({ cart, setCart }) => {
 	const [isCart, setIsCart] = useState(false);
 	const { checkout, mealsCart } = cart;
 
-	const windowsWidth = window.innerWidth;
+	const [windowSize, setWindowSize] = useState(getWindowSize());
+
+	useEffect(() => {
+		function handleWindowResize() {
+			setWindowSize(getWindowSize());
+		}
+
+		window.addEventListener("resize", handleWindowResize);
+
+		return () => {
+			window.removeEventListener("resize", handleWindowResize);
+		};
+	}, []);
+
+	// const windowsWidth = useRef(window.innerWidth);
+	// console.log(windowsWidth);
 	const mediaQuery768 = 768;
 	const deliveryCost = 2.5;
 
@@ -69,7 +89,7 @@ const ShoppingCart = ({ cart, setCart }) => {
 								</form>
 							</div>
 						</>
-					) : windowsWidth < mediaQuery768 ? (
+					) : windowSize.innerWidth < mediaQuery768 ? (
 						<>
 							<div id="item-in-cart">
 								<button onClick={() => setIsCart(true)}>
@@ -82,7 +102,7 @@ const ShoppingCart = ({ cart, setCart }) => {
 							</div>
 						</>
 					) : (
-						setIsCart(true)
+						(console.log("test"), setIsCart(true))
 					)
 				) : (
 					<>
