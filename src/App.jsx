@@ -10,6 +10,8 @@ import "./App.css";
 function App() {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
+
+	//OBJECT -> all the item in the shooping cart + the total amount
 	const [cart, setCart] = useState({
 		checkout: 0.0,
 		mealsCart: [],

@@ -3,12 +3,25 @@ import "./meal.css";
 const Meal = ({ meal, cart, setCart }) => {
 	const { checkout, mealsCart } = cart;
 
+	/**
+	 * function to handle when click on any meal
+	 *
+	 * if the meal is not in the shopping cart yet (check by id)
+	 * create a new meal object in the state cart.mealsCart
+	 * add the price to the state cart.checkout
+	 *
+	 * else add 1 to quantity key for the meal in the array in the state cart.mealsCart[]
+	 * add the price to the state cart.checkout
+	 *
+	 */
 	const handleClickMeal = () => {
 		const tempCart = [...mealsCart];
 		let tempCheckout = checkout;
 
+		// check if there is an object with the meal id in cart.mealsCart
 		const index = tempCart.map((mc) => mc.id).indexOf(meal.id);
 
+		// if there is one
 		if (index !== -1) {
 			tempCart[index].quantity += 1.0;
 			const num = parseFloat(tempCart[index].price);
@@ -20,6 +33,7 @@ const Meal = ({ meal, cart, setCart }) => {
 				checkout: tempCheckout,
 				mealsCart: tempCart,
 			});
+			// if there is not
 		} else {
 			const num = parseFloat(meal.price);
 			num.toFixed(1);
@@ -49,6 +63,7 @@ const Meal = ({ meal, cart, setCart }) => {
 						<p>{meal.description}</p>
 						<div className="price">
 							<span>{meal.price} €</span>
+							{/* check if there is key popular in the data for the meal */}
 							{meal.popular && (
 								<p>
 									<i className="icon-STAR_FILL"></i> Populaire
@@ -56,6 +71,7 @@ const Meal = ({ meal, cart, setCart }) => {
 							)}
 						</div>
 					</div>
+					{/* check if there is key picture in the data for the meal */}
 					{meal.picture && (
 						<div>
 							<img src={meal.picture} alt={meal.title} />

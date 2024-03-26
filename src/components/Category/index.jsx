@@ -7,6 +7,7 @@ const Category = ({ categ, cart, setCart }) => {
 		<>
 			<h2>{categ.name}</h2>
 			<div className="meals">
+				{/* render all meal in the category */}
 				{categ.meals.map((meal) => {
 					return (
 						<div key={meal.id} className="meal">
