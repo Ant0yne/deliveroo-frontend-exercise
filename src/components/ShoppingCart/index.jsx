@@ -9,7 +9,7 @@ const ShoppingCart = ({ cart, setCart }) => {
 	const { checkout, mealsCart } = cart;
 	const deliveryCost = 2.5;
 
-	let totalMeals = 0;
+	let totalMeals = 0.0;
 
 	if (mealsCart.length > 0) {
 		mealsCart.map((meal) => {

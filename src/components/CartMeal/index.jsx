@@ -9,23 +9,34 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart }) => {
 						onClick={() => {
 							const tempCart = [...mealsCart];
 							let tempCheckout = checkout;
+							const num = mealCart.price;
+							num.toFixed(1);
+							console.log(num);
 
 							if (mealCart.quantity > 1) {
 								tempCart.map((temp) => {
 									if (temp.id === mealCart.id) {
-										return (temp.quantity -= 1);
+										return (temp.quantity -= 1.0);
 									} else {
 										return null;
 									}
 								});
-								tempCheckout -= mealCart.price;
+								tempCheckout -= num;
 
 								setCart({
 									checkout: tempCheckout,
 									mealsCart: tempCart,
 								});
 							} else {
-								tempCheckout -= mealCart.price * mealCart.quantity;
+								const num = mealCart.price;
+								num.toFixed(1);
+
+								if (mealsCart.length <= 0) {
+									console.log("raz");
+									tempCheckout = 0.0;
+								} else {
+									tempCheckout -= num * mealCart.quantity;
+								}
 								const index = tempCart
 									.map((temp) => temp.id)
 									.indexOf(mealCart.id);
@@ -44,15 +55,19 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart }) => {
 							const tempCart = [...mealsCart];
 							let tempCheckout = checkout;
 
+							const num = mealCart.price;
+							num.toFixed(1);
+							console.log(num);
+
 							tempCart.map((temp) => {
 								if (temp.id === mealCart.id) {
-									return (temp.quantity += 1);
+									return (temp.quantity += 1.0);
 								} else {
 									return null;
 								}
 							});
 
-							tempCheckout += Number(mealCart.price);
+							tempCheckout += num;
 
 							setCart({
 								checkout: tempCheckout,

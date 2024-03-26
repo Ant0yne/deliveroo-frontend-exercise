@@ -11,32 +11,32 @@ function App() {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
 	const [cart, setCart] = useState({
-		checkout: 65.0,
+		checkout: 0.0,
 		mealsCart: [
-			{
-				id: "4564161",
-				title: "premier",
-				price: "25.00",
-				quantity: 2,
-			},
-			{
-				id: "dqsdqsdqsdqsd",
-				title: "second",
-				price: "15.00",
-				quantity: 1,
-			},
-			{
-				id: "dqsdqsdqsdqdqsdqsdqzjkkqsd",
-				title: "troisième",
-				price: "10.00",
-				quantity: 3,
-			},
-			{
-				id: "dqsdqsjhgjjjkkkdqsdqsd",
-				title: "quatrième",
-				price: "5.00",
-				quantity: 1,
-			},
+			// {
+			// 	id: "4564161",
+			// 	title: "premier",
+			// 	price: "25.00",
+			// 	quantity: 2,
+			// },
+			// {
+			// 	id: "dqsdqsdqsdqsd",
+			// 	title: "second",
+			// 	price: "15.00",
+			// 	quantity: 1,
+			// },
+			// {
+			// 	id: "dqsdqsdqsdqdqsdqsdqzjkkqsd",
+			// 	title: "troisième",
+			// 	price: "10.00",
+			// 	quantity: 3,
+			// },
+			// {
+			// 	id: "dqsdqsjhgjjjkkkdqsdqsd",
+			// 	title: "quatrième",
+			// 	price: "5.00",
+			// 	quantity: 1,
+			// },
 		],
 	});
 
