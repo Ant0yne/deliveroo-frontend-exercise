@@ -7,6 +7,9 @@ import "./shoppingCart.css";
 const ShoppingCart = ({ cart, setCart }) => {
 	const [isCart, setIsCart] = useState(false);
 	const { checkout, mealsCart } = cart;
+
+	const windowsWidth = window.innerWidth;
+	const mediaQuery768 = 768;
 	const deliveryCost = 2.5;
 
 	let totalMeals = 0.0;
@@ -24,37 +27,39 @@ const ShoppingCart = ({ cart, setCart }) => {
 					isCart ? (
 						<>
 							<div id="cart-visible">
-								<div>
-									<button onClick={() => setIsCart(false)}>X</button>
-								</div>
-								<div>
-									{mealsCart.map((mealCart) => {
-										return (
-											<CartMeal
-												key={mealCart.id}
-												checkout={checkout}
-												mealsCart={mealsCart}
-												mealCart={mealCart}
-												setCart={setCart}
-												setIsCart={setIsCart}
-											/>
-										);
-									})}
-								</div>
+								<div id="list-meal">
+									<div className="hidden">
+										<button onClick={() => setIsCart(false)}>X</button>
+									</div>
+									<div>
+										{mealsCart.map((mealCart) => {
+											return (
+												<CartMeal
+													key={mealCart.id}
+													checkout={checkout}
+													mealsCart={mealsCart}
+													mealCart={mealCart}
+													setCart={setCart}
+													setIsCart={setIsCart}
+												/>
+											);
+										})}
+									</div>
 
-								<div>
-									<div className="sub-total-delivery">
-										<p>Sous-total</p>
-										<p>{checkout} €</p>
+									<div>
+										<div className="sub-total-delivery">
+											<p>Sous-total</p>
+											<p>{checkout} €</p>
+										</div>
+										<div className="sub-total-delivery">
+											<p>Frais de livraison</p>
+											<p>{deliveryCost} €</p>
+										</div>
 									</div>
 									<div className="sub-total-delivery">
-										<p>Frais de livraison</p>
-										<p>{deliveryCost} €</p>
+										<p>Total</p>
+										<p>{checkout + deliveryCost} €</p>
 									</div>
-								</div>
-								<div className="sub-total-delivery">
-									<p>Total</p>
-									<p>{checkout + deliveryCost} €</p>
 								</div>
 								<form
 									onSubmit={(e) => {
@@ -64,7 +69,7 @@ const ShoppingCart = ({ cart, setCart }) => {
 								</form>
 							</div>
 						</>
-					) : (
+					) : windowsWidth < mediaQuery768 ? (
 						<>
 							<div id="item-in-cart">
 								<button onClick={() => setIsCart(true)}>
@@ -76,6 +81,8 @@ const ShoppingCart = ({ cart, setCart }) => {
 								</button>
 							</div>
 						</>
+					) : (
+						setIsCart(true)
 					)
 				) : (
 					<>

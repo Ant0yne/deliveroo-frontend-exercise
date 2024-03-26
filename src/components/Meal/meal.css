@@ -1,4 +1,4 @@
-.meal {
+.in-meal {
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
@@ -10,13 +10,14 @@ h3 {
 	font-family: "IBM Plex Sans", sans-serif;
 	font-size: 1.6rem;
 	margin-bottom: 5px;
+	text-align: start;
 }
 
-.meal > button > div:nth-child(2) {
+.in-meal > div:nth-child(2) {
 	height: 150px;
 }
 
-.meal img {
+.in-meal img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -24,6 +25,8 @@ h3 {
 
 .meal button {
 	background-color: var(--white);
+	width: 100%;
+	height: 100%;
 }
 
 .price {
@@ -47,7 +50,7 @@ h3 {
 /* ------------- MEDIA 894px ---------------- */
 
 @media (min-width: 894px) {
-	.meal {
+	.in-meal {
 		flex-direction: row;
 		border-radius: 10px;
 		align-items: center;
@@ -55,14 +58,14 @@ h3 {
 		gap: 30px;
 	}
 
-	.meal > div:first-child {
+	.in-meal > div:first-child {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		min-height: 130px;
 	}
 
-	.meal > div:nth-child(2) {
+	.in-meal > div:nth-child(2) {
 		flex-shrink: 0;
 		width: 130px;
 		height: 130px;
@@ -90,7 +93,11 @@ h3 {
 		width: calc((100% - 20px) / 2);
 	}
 
-	.meal > div:nth-child(2) {
-		height: 100%;
+	.in-meal > div:first-child {
+		flex: 2;
+	}
+
+	.in-meal > div:nth-child(2) {
+		flex: 1;
 	}
 }
