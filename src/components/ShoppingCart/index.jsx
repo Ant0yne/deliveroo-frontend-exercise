@@ -11,9 +11,14 @@ function getWindowSize() {
 
 const ShoppingCart = ({ cart, setCart }) => {
 	const [isCart, setIsCart] = useState(false);
+	const [windowSize, setWindowSize] = useState(getWindowSize());
+
 	const { checkout, mealsCart } = cart;
 
-	const [windowSize, setWindowSize] = useState(getWindowSize());
+	const mediaQuery768 = 768;
+	const deliveryCost = 2.5;
+
+	let totalMeals = 0.0;
 
 	useEffect(() => {
 		function handleWindowResize() {
@@ -26,13 +31,6 @@ const ShoppingCart = ({ cart, setCart }) => {
 			window.removeEventListener("resize", handleWindowResize);
 		};
 	}, []);
-
-	// const windowsWidth = useRef(window.innerWidth);
-	// console.log(windowsWidth);
-	const mediaQuery768 = 768;
-	const deliveryCost = 2.5;
-
-	let totalMeals = 0.0;
 
 	if (mealsCart.length > 0) {
 		mealsCart.map((meal) => {
@@ -102,7 +100,7 @@ const ShoppingCart = ({ cart, setCart }) => {
 							</div>
 						</>
 					) : (
-						(console.log("test"), setIsCart(true))
+						setIsCart(true)
 					)
 				) : (
 					<>
