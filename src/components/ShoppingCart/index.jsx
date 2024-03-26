@@ -53,8 +53,8 @@ const ShoppingCart = ({ cart, setCart }) => {
 									</div>
 								</div>
 								<div className="sub-total-delivery">
-									<h3>Total</h3>
-									<h3>{checkout + deliveryCost} €</h3>
+									<p>Total</p>
+									<p>{checkout + deliveryCost} €</p>
 								</div>
 								<form
 									onSubmit={(e) => {

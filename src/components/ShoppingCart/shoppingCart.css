@@ -24,6 +24,13 @@
 	padding: 10px 0;
 }
 
+#cart-visible > div:nth-of-type(4) {
+	font-weight: bold;
+	margin: 20px 0 10px 0;
+	/* font-size: 1.8rem; */
+	font-size: 2rem;
+}
+
 #cart-visible button {
 	background-color: var(--white);
 }
@@ -36,6 +43,20 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 5px 0;
+}
+
+#cart-visible input {
+	background-color: var(--purple);
+	border: none;
+	color: var(--white);
+	height: 60px;
+	width: 100%;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+#cart-visible input:hover {
+	background-color: var(--purple-hover);
 }
 
 /* ________________________________ */
