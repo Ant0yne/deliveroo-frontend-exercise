@@ -10,6 +10,16 @@
 	text-align: center;
 }
 
+#see-cart > button {
+	width: 100%;
+}
+
+#see-cart > button > div {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
 .sub-total-delivery {
 	display: flex;
 	justify-content: space-between;

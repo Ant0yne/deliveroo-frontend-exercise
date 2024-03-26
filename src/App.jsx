@@ -11,13 +11,19 @@ function App() {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
 	const [cart, setCart] = useState({
-		checkout: 25.0,
+		checkout: 40.0,
 		mealsCart: [
 			{
 				id: "4564161",
-				title: "test",
+				title: "premier",
 				price: "25.00",
 				quantity: 2,
+			},
+			{
+				id: "dqsdqsdqsdqsd",
+				title: "second",
+				price: "15.00",
+				quantity: 1,
 			},
 		],
 	});
