@@ -23,7 +23,7 @@ const ShoppingCart = ({ cart, setCart }) => {
 				{mealsCart.length > 0 ? (
 					isCart ? (
 						<>
-							<div>
+							<div id="cart-visible">
 								<button onClick={() => setIsCart(false)}>X</button>
 								<div>
 									{mealsCart.map((mealCart) => {
@@ -34,6 +34,7 @@ const ShoppingCart = ({ cart, setCart }) => {
 												mealsCart={mealsCart}
 												mealCart={mealCart}
 												setCart={setCart}
+												setIsCart={setIsCart}
 											/>
 										);
 									})}
@@ -60,12 +61,12 @@ const ShoppingCart = ({ cart, setCart }) => {
 						</>
 					) : (
 						<>
-							<div id="see-cart">
+							<div id="item-in-cart">
 								<button onClick={() => setIsCart(true)}>
-									<div>
+									<div id="cart-resume">
 										<p>{totalMeals}</p>
 										<p>Voir le panier</p>
-										<p>{checkout}</p>
+										<p>{checkout} €</p>
 									</div>
 								</button>
 							</div>
@@ -73,8 +74,10 @@ const ShoppingCart = ({ cart, setCart }) => {
 					)
 				) : (
 					<>
-						<div>
-							<p>Voir le panier vide</p>
+						<div id="cart-hidden">
+							<div id="empty-cart">
+								<p>Voir le panier vide</p>
+							</div>
 						</div>
 					</>
 				)}

@@ -17,9 +17,6 @@ const Meal = ({ meal, cart, setCart }) => {
 						const num = parseFloat(tempCart[index].price);
 						num.toFixed(1);
 
-						console.log(num);
-						console.log(cart);
-
 						tempCheckout += num;
 
 						setCart({
@@ -30,7 +27,6 @@ const Meal = ({ meal, cart, setCart }) => {
 						const num = parseFloat(meal.price);
 						num.toFixed(1);
 
-						console.log(num);
 						tempCart.push({
 							id: meal.id,
 							title: meal.title,

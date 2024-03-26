@@ -1,6 +1,6 @@
 import "./cartMeal.css";
 
-const CartMeal = ({ checkout, mealsCart, mealCart, setCart }) => {
+const CartMeal = ({ checkout, mealsCart, mealCart, setCart, setIsCart }) => {
 	return (
 		<>
 			<div className="cart-meal">
@@ -11,7 +11,6 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart }) => {
 							let tempCheckout = checkout;
 							const num = mealCart.price;
 							num.toFixed(1);
-							console.log(num);
 
 							if (mealCart.quantity > 1) {
 								tempCart.map((temp) => {
@@ -31,20 +30,25 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart }) => {
 								const num = mealCart.price;
 								num.toFixed(1);
 
-								if (mealsCart.length <= 0) {
-									console.log("raz");
-									tempCheckout = 0.0;
-								} else {
-									tempCheckout -= num * mealCart.quantity;
-								}
 								const index = tempCart
 									.map((temp) => temp.id)
 									.indexOf(mealCart.id);
 								tempCart.splice(index, 1);
-								setCart({
-									checkout: tempCheckout,
-									mealsCart: tempCart,
-								});
+
+								if (tempCart.length <= 0) {
+									tempCheckout = 0.0;
+									setIsCart(false);
+									setCart({
+										checkout: 0.0,
+										mealsCart: tempCart,
+									});
+								} else {
+									tempCheckout -= num * mealCart.quantity;
+									setCart({
+										checkout: tempCheckout,
+										mealsCart: tempCart,
+									});
+								}
 							}
 						}}>
 						-
@@ -57,7 +61,6 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart }) => {
 
 							const num = mealCart.price;
 							num.toFixed(1);
-							console.log(num);
 
 							tempCart.map((temp) => {
 								if (temp.id === mealCart.id) {
