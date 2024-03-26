@@ -7,15 +7,31 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart }) => {
 				<div>
 					<button
 						onClick={() => {
+							const tempCart = [...mealsCart];
+							let tempCheckout = checkout;
+
 							if (mealCart.quantity > 1) {
-								const tempCart = [...mealsCart];
 								tempCart.map((temp) => {
 									if (temp.id === mealCart.id) {
-										temp.quantity -= 1;
+										return (temp.quantity -= 1);
+									} else {
+										return null;
 									}
 								});
+								tempCheckout -= mealCart.price;
+
 								setCart({
-									checkout: checkout,
+									checkout: tempCheckout,
+									mealsCart: tempCart,
+								});
+							} else {
+								tempCheckout -= mealCart.price * mealCart.quantity;
+								const index = tempCart
+									.map((temp) => temp.id)
+									.indexOf(mealCart.id);
+								tempCart.splice(index, 1);
+								setCart({
+									checkout: tempCheckout,
 									mealsCart: tempCart,
 								});
 							}
@@ -25,18 +41,23 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart }) => {
 					<p>{mealCart.quantity}</p>
 					<button
 						onClick={() => {
-							if (mealCart.quantity >= 1) {
-								const tempCart = [...mealsCart];
-								tempCart.map((temp) => {
-									if (temp.id === mealCart.id) {
-										temp.quantity += 1;
-									}
-								});
-								setCart({
-									checkout: checkout,
-									mealsCart: tempCart,
-								});
-							}
+							const tempCart = [...mealsCart];
+							let tempCheckout = checkout;
+
+							tempCart.map((temp) => {
+								if (temp.id === mealCart.id) {
+									return (temp.quantity += 1);
+								} else {
+									return null;
+								}
+							});
+
+							tempCheckout += Number(mealCart.price);
+
+							setCart({
+								checkout: tempCheckout,
+								mealsCart: tempCart,
+							});
 						}}>
 						+
 					</button>

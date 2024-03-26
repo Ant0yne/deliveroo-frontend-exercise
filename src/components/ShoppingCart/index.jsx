@@ -42,7 +42,7 @@ const ShoppingCart = ({ cart, setCart }) => {
 								<div>
 									<div className="sub-total-delivery">
 										<p>Sous-total</p>
-										<p>{checkout - deliveryCost} €</p>
+										<p>{checkout} €</p>
 									</div>
 									<div className="sub-total-delivery">
 										<p>Frais de livraison</p>
@@ -51,7 +51,7 @@ const ShoppingCart = ({ cart, setCart }) => {
 								</div>
 								<div className="sub-total-delivery">
 									<h3>Total</h3>
-									<h3>{checkout} €</h3>
+									<h3>{checkout + deliveryCost} €</h3>
 								</div>
 								<form>
 									<input type="submit" value="Valider ma commande" />
