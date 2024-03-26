@@ -24,7 +24,9 @@ const ShoppingCart = ({ cart, setCart }) => {
 					isCart ? (
 						<>
 							<div id="cart-visible">
-								<button onClick={() => setIsCart(false)}>X</button>
+								<div>
+									<button onClick={() => setIsCart(false)}>X</button>
+								</div>
 								<div>
 									{mealsCart.map((mealCart) => {
 										return (
@@ -54,7 +56,10 @@ const ShoppingCart = ({ cart, setCart }) => {
 									<h3>Total</h3>
 									<h3>{checkout + deliveryCost} €</h3>
 								</div>
-								<form>
+								<form
+									onSubmit={(e) => {
+										e.preventDefault();
+									}}>
 									<input type="submit" value="Valider ma commande" />
 								</form>
 							</div>

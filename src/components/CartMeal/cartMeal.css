@@ -1,8 +1,27 @@
 .cart-meal {
 	display: flex;
 	justify-content: space-between;
+	margin: 10px 0;
 }
 
 .cart-meal > div {
 	display: flex;
+	align-items: start;
+}
+
+.cart-meal p {
+	text-align: start;
+}
+
+.cart-meal > p:nth-of-type(2) {
+	flex-shrink: 0;
+}
+
+.cart-meal button {
+	height: 20px;
+}
+
+.cart-meal i {
+	color: var(--green-deliveroo);
+	font-size: 2rem;
 }

@@ -51,7 +51,7 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart, setIsCart }) => {
 								}
 							}
 						}}>
-						-
+						<i className="icon-minus"></i>
 					</button>
 					<p>{mealCart.quantity}</p>
 					<button
@@ -77,7 +77,7 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart, setIsCart }) => {
 								mealsCart: tempCart,
 							});
 						}}>
-						+
+						<i className="icon-plus"></i>
 					</button>
 				</div>
 				<p>{mealCart.title}</p>
