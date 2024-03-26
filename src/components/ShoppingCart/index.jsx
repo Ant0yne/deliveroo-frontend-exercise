@@ -20,52 +20,61 @@ const ShoppingCart = ({ cart, setCart }) => {
 	return (
 		<>
 			<div id="cart">
-				{isCart ? (
-					<>
-						<div>
-							<button onClick={() => setIsCart(false)}>X</button>
+				{mealsCart.length > 0 ? (
+					isCart ? (
+						<>
 							<div>
-								{mealsCart.map((mealCart) => {
-									return (
-										<CartMeal
-											key={mealCart.id}
-											checkout={checkout}
-											mealCart={mealCart}
-											setCart={setCart}
-										/>
-									);
-								})}
-							</div>
+								<button onClick={() => setIsCart(false)}>X</button>
+								<div>
+									{mealsCart.map((mealCart) => {
+										return (
+											<CartMeal
+												key={mealCart.id}
+												checkout={checkout}
+												mealsCart={mealsCart}
+												mealCart={mealCart}
+												setCart={setCart}
+											/>
+										);
+									})}
+								</div>
 
-							<div>
-								<div className="sub-total-delivery">
-									<p>Sous-total</p>
-									<p>{checkout - deliveryCost} €</p>
+								<div>
+									<div className="sub-total-delivery">
+										<p>Sous-total</p>
+										<p>{checkout - deliveryCost} €</p>
+									</div>
+									<div className="sub-total-delivery">
+										<p>Frais de livraison</p>
+										<p>{deliveryCost} €</p>
+									</div>
 								</div>
 								<div className="sub-total-delivery">
-									<p>Frais de livraison</p>
-									<p>{deliveryCost} €</p>
+									<h3>Total</h3>
+									<h3>{checkout} €</h3>
 								</div>
+								<form>
+									<input type="submit" value="Valider ma commande" />
+								</form>
 							</div>
-							<div className="sub-total-delivery">
-								<h3>Total</h3>
-								<h3>{checkout} €</h3>
+						</>
+					) : (
+						<>
+							<div id="see-cart">
+								<button onClick={() => setIsCart(true)}>
+									<div>
+										<p>{totalMeals}</p>
+										<p>Voir le panier</p>
+										<p>{checkout}</p>
+									</div>
+								</button>
 							</div>
-							<form>
-								<input type="submit" value="Valider ma commande" />
-							</form>
-						</div>
-					</>
+						</>
+					)
 				) : (
 					<>
-						<div id="see-cart">
-							<button onClick={() => setIsCart(true)}>
-								<div>
-									<p>{totalMeals}</p>
-									<p>Voir le panier</p>
-									<p>{checkout}</p>
-								</div>
-							</button>
+						<div>
+							<p>Voir le panier vide</p>
 						</div>
 					</>
 				)}
