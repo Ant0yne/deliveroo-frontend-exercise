@@ -1,6 +1,6 @@
 import "./meal.css";
 
-const Meal = ({ meal }) => {
+const Meal = ({ meal, cart, setCart }) => {
 	return (
 		<>
 			<div>

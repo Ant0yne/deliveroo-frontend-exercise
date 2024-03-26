@@ -3,7 +3,7 @@ import Menu from "../Menu";
 
 import "./main.css";
 
-const Main = ({ data }) => {
+const Main = ({ data, cart, setCart }) => {
 	const { restaurant, categories } = data;
 
 	return (
@@ -12,7 +12,7 @@ const Main = ({ data }) => {
 				<div>
 					<Title restaurant={restaurant} />
 				</div>
-				<Menu categories={categories} />
+				<Menu categories={categories} cart={cart} setCart={setCart} />
 			</main>
 		</>
 	);

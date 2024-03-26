@@ -10,6 +10,17 @@ import "./App.css";
 function App() {
 	const [data, setData] = useState();
 	const [isLoading, setIsLoading] = useState(true);
+	const [cart, setCart] = useState({
+		checkout: 25.0,
+		mealsCart: [
+			{
+				id: "4564161",
+				title: "test",
+				price: "25.00",
+				quantity: 2,
+			},
+		],
+	});
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -33,7 +44,7 @@ function App() {
 			) : (
 				<>
 					<Header />
-					<Main data={data} />
+					<Main data={data} cart={cart} setCart={setCart} />
 				</>
 			)}
 		</>
