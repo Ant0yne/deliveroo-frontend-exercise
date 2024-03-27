@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import CartMeal from "../CartMeal";
 
 import "./cartMealVisible.css";
@@ -7,7 +9,6 @@ const CartMealVisible = ({
 	mealsCart,
 	checkout,
 	setCart,
-	isCart,
 	setIsCart,
 }) => {
 	return (

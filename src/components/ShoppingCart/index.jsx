@@ -18,7 +18,7 @@ const ShoppingCart = ({ cart, setCart }) => {
 
 	const { checkout, mealsCart } = cart;
 
-	const mediaQuery768 = 768;
+	const mediaQuery = 768;
 	const deliveryCost = 2.5;
 
 	// to assign the total quantity of meal when the cart is not expend
@@ -56,15 +56,17 @@ const ShoppingCart = ({ cart, setCart }) => {
 					// if the cart is not expend
 					// if the window is in "mobile" width size
 					// display a button to expend the cart
-					windowSize.innerWidth > mediaQuery768 ? (
-						<CartMealVisible
-							deliveryCost={deliveryCost}
-							mealsCart={mealsCart}
-							checkout={checkout}
-							setCart={setCart}
-							isCart={isCart}
-							setIsCart={setIsCart}
-						/>
+					windowSize.innerWidth > mediaQuery ? (
+						(isCart && setIsCart(false),
+						(
+							<CartMealVisible
+								deliveryCost={deliveryCost}
+								mealsCart={mealsCart}
+								checkout={checkout}
+								setCart={setCart}
+								setIsCart={setIsCart}
+							/>
+						))
 					) : // if the cart is expend
 					isCart ? (
 						<CartMealVisible
@@ -72,7 +74,6 @@ const ShoppingCart = ({ cart, setCart }) => {
 							mealsCart={mealsCart}
 							checkout={checkout}
 							setCart={setCart}
-							isCart={isCart}
 							setIsCart={setIsCart}
 						/>
 					) : (
