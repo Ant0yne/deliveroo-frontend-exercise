@@ -2,6 +2,7 @@ import axios from "axios";
 
 import { useState, useEffect } from "react";
 
+import Loading from "./components/Loading";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
@@ -33,9 +34,7 @@ function App() {
 	return (
 		<>
 			{isLoading === true ? (
-				<div>
-					<h1>Chargement en cours...</h1>
-				</div>
+				<Loading />
 			) : (
 				<>
 					<Header />
