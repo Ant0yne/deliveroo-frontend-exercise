@@ -19,13 +19,13 @@ const Meal = ({ meal, cart, setCart }) => {
 		let tempCheckout = checkout;
 
 		// check if there is an object with the meal id in cart.mealsCart
-		const index = tempCart.map((mc) => mc.id).indexOf(meal.id);
+		const found = tempCart.find((mc) => mc.id === meal.id);
 
 		// if there is one
-		if (index !== -1) {
-			tempCart[index].quantity += 1;
+		if (found) {
+			found.quantity += 1;
 
-			const num = tempCheckout + tempCart[index].price;
+			const num = tempCheckout + found.price;
 
 			tempCheckout = Number(num.toFixed(2));
 
