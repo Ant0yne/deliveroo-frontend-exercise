@@ -47,7 +47,7 @@ h3 {
 	font-size: 1.6rem;
 }
 
-/* ------------- MEDIA 894px ---------------- */
+/* -------------- MEDIA 894px -------------- */
 
 @media (min-width: 894px) {
 	.in-meal {
@@ -87,6 +87,8 @@ h3 {
 		font-size: 2rem;
 	}
 }
+
+/* -------------- MEDIA 1125px -------------- */
 
 @media (min-width: 1125px) {
 	.meal {

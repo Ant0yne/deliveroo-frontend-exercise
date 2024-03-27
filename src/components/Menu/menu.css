@@ -3,6 +3,8 @@
 	flex-direction: column;
 }
 
+/* -------------- MEDIA 768px -------------- */
+
 @media (min-width: 768px) {
 	#menu {
 		padding: 0 20px;
@@ -10,6 +12,8 @@
 		gap: 40px;
 	}
 }
+
+/* -------------- MEDIA 1200px -------------- */
 
 @media (min-width: 1200px) {
 	.container {

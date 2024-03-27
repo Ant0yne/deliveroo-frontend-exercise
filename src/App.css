@@ -25,7 +25,6 @@ body {
 	font-family: "IBM Plex Sans", sans-serif;
 	font-size: 1.4rem;
 	line-height: 22px;
-	/* padding: 10px; */
 }
 
 html::-webkit-scrollbar {
@@ -45,12 +44,6 @@ button {
 p {
 	color: var(--grey);
 	text-align: justify;
-}
-
-a {
-	color: var(--black);
-	text-decoration: none;
-	font-weight: bold;
 }
 
 /* @media (min-width: 768px) {

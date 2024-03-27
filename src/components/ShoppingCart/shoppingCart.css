@@ -1,3 +1,5 @@
+/* All cart layout */
+
 #cart {
 	width: 100%;
 	background-color: var(--white);
@@ -6,60 +8,7 @@
 	border-top: 2px solid var(--light-grey-b);
 }
 
-/* ________________________________ */
-
-#cart-visible {
-	padding: 10px;
-}
-
-#list-meal > div:nth-of-type(1) {
-	display: flex;
-	justify-content: end;
-	margin-bottom: 10px;
-}
-
-#list-meal > div:nth-of-type(3) {
-	border-top: 1px solid var(--light-grey);
-	border-bottom: 1px solid var(--light-grey);
-	padding: 10px 0;
-}
-
-#list-meal > div:nth-of-type(4) {
-	font-weight: bold;
-	margin: 20px 0 10px 0;
-	/* font-size: 1.8rem; */
-	font-size: 2rem;
-}
-
-#cart-visible button {
-	background-color: var(--white);
-}
-
-#cart-visible p {
-	color: var(--black);
-}
-
-.sub-total-delivery {
-	display: flex;
-	justify-content: space-between;
-	padding: 5px 0;
-}
-
-#cart-visible input {
-	background-color: var(--purple);
-	border: none;
-	color: var(--white);
-	height: 60px;
-	width: 100%;
-	border-radius: 5px;
-	font-weight: bold;
-}
-
-#cart-visible input:hover {
-	background-color: var(--purple-hover);
-}
-
-/* ________________________________ */
+/* Cart not expend layout when there is meal in cart */
 
 #item-in-cart {
 	height: 80px;
@@ -76,8 +25,6 @@
 #item-in-cart > button:hover {
 	background-color: var(--purple-hover);
 }
-
-/* ________________________________ */
 
 #cart-resume {
 	width: 100%;
@@ -96,16 +43,14 @@
 #cart-resume p {
 	color: var(--white);
 	font-weight: bold;
-
-	/* ________________________________ */
 }
+
+/* Cart empty */
 
 #cart-hidden {
 	height: 80px;
 	padding: 10px;
 }
-
-/* ________________________________ */
 
 #empty-cart {
 	background-color: var(--light-grey);
@@ -116,7 +61,7 @@
 	align-items: center;
 }
 
-/* ________________________________ */
+/* -------------- MEDIA 768px -------------- */
 
 @media (min-width: 768px) {
 	#cart {
@@ -126,24 +71,5 @@
 		margin-top: 20px;
 		border-radius: 5px;
 		top: 0;
-	}
-
-	#cart-visible {
-		display: flex;
-		flex-direction: column-reverse;
-		gap: 10px;
-	}
-
-	#cart-visible > #list-meal > .hidden {
-		display: none;
-	}
-
-	#cart-visible input {
-		background-color: var(--green-deliveroo);
-		font-size: 1.8rem;
-	}
-
-	#cart-visible input:hover {
-		background-color: var(--green-deliveroo-hover);
 	}
 }

@@ -2,6 +2,8 @@
 	margin-bottom: 20px;
 }
 
+/* -------------- MEDIA 768px -------------- */
+
 @media (min-width: 768px) {
 	#categories {
 		width: 100%;
