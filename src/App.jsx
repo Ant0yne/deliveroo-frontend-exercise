@@ -13,7 +13,7 @@ function App() {
 
 	//OBJECT -> all the item in the shooping cart + the total amount
 	const [cart, setCart] = useState({
-		checkout: 0.0,
+		checkout: 0,
 		mealsCart: [],
 	});
 

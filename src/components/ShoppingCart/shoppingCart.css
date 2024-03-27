@@ -122,10 +122,10 @@
 	#cart {
 		width: 350px;
 		flex-shrink: 0;
-		position: static;
 		height: 100%;
 		margin-top: 20px;
 		border-radius: 5px;
+		top: 0;
 	}
 
 	#cart-visible {

@@ -94,7 +94,7 @@ const ShoppingCart = ({ cart, setCart }) => {
 					<>
 						<div id="cart-hidden">
 							<div id="empty-cart">
-								<p>Voir le panier vide</p>
+								<p>Panier vide</p>
 							</div>
 						</div>
 					</>

@@ -23,20 +23,20 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart, setIsCart }) => {
 		if (btn === "sub") {
 			const tempCart = [...mealsCart];
 			let tempCheckout = checkout;
-			const num = mealCart.price;
-			num.toFixed(1);
 
 			// there is more than one of the meal quantity
 			// add one of the meal with same id and add price to checkout
 			if (mealCart.quantity > 1) {
 				tempCart.map((temp) => {
 					if (temp.id === mealCart.id) {
-						return (temp.quantity -= 1.0);
+						return (temp.quantity -= 1);
 					} else {
 						return null;
 					}
 				});
-				tempCheckout -= num;
+				const num = tempCheckout - mealCart.price;
+
+				tempCheckout = Number(num.toFixed(2));
 
 				setCart({
 					checkout: tempCheckout,
@@ -44,9 +44,6 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart, setIsCart }) => {
 				});
 				// there is only one quantity of this meal with this id in cart
 			} else {
-				const num = mealCart.price;
-				num.toFixed(1);
-
 				// remove the meal from the state
 				const index = tempCart.map((temp) => temp.id).indexOf(mealCart.id);
 				tempCart.splice(index, 1);
@@ -55,16 +52,18 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart, setIsCart }) => {
 				// re-init the state
 				// hide the cart
 				if (tempCart.length <= 0) {
-					tempCheckout = 0.0;
+					tempCheckout = 0;
 					setIsCart(false);
 					setCart({
-						checkout: 0.0,
+						checkout: 0,
 						mealsCart: tempCart,
 					});
 					// if there is other meals in cart
 					// recalculate the checkout
 				} else {
-					tempCheckout -= num * mealCart.quantity;
+					const num = tempCheckout - mealCart.price;
+					tempCheckout = Number(num.toFixed(2));
+
 					setCart({
 						checkout: tempCheckout,
 						mealsCart: tempCart,
@@ -75,20 +74,20 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart, setIsCart }) => {
 			const tempCart = [...mealsCart];
 			let tempCheckout = checkout;
 
-			const num = mealCart.price;
-			num.toFixed(1);
-
 			// add one to the meal quantity in cart
 			// add the price to the checkout
 			tempCart.map((temp) => {
 				if (temp.id === mealCart.id) {
-					return (temp.quantity += 1.0);
+					return (temp.quantity += 1);
 				} else {
 					return null;
 				}
 			});
 
-			tempCheckout += num;
+			const num = tempCheckout + mealCart.price;
+
+			tempCheckout = Number(num.toFixed(2));
+			console.log(tempCheckout, typeof tempCheckout);
 
 			setCart({
 				checkout: tempCheckout,
@@ -116,7 +115,7 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart, setIsCart }) => {
 					</button>
 				</div>
 				<p>{mealCart.title}</p>
-				<p>{mealCart.price * mealCart.quantity} €</p>
+				<p>{Number((mealCart.price * mealCart.quantity).toFixed(2))} €</p>
 			</div>
 		</>
 	);

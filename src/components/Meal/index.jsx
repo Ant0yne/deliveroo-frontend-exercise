@@ -23,11 +23,11 @@ const Meal = ({ meal, cart, setCart }) => {
 
 		// if there is one
 		if (index !== -1) {
-			tempCart[index].quantity += 1.0;
-			const num = parseFloat(tempCart[index].price);
-			num.toFixed(1);
+			tempCart[index].quantity += 1;
 
-			tempCheckout += num;
+			const num = tempCheckout + tempCart[index].price;
+
+			tempCheckout = Number(num.toFixed(2));
 
 			setCart({
 				checkout: tempCheckout,
@@ -35,18 +35,18 @@ const Meal = ({ meal, cart, setCart }) => {
 			});
 			// if there is not
 		} else {
-			const num = parseFloat(meal.price);
-			num.toFixed(1);
+			const tempPrice = Number(meal.price.replace(",", "."));
 
 			tempCart.push({
 				id: meal.id,
 				title: meal.title,
-				price: num,
-				quantity: 1.0,
+				price: tempPrice,
+				quantity: 1,
 			});
 
-			tempCheckout += num;
+			const num = tempCheckout + tempPrice;
 
+			tempCheckout = Number(num.toFixed(2));
 			setCart({
 				checkout: tempCheckout,
 				mealsCart: tempCart,
