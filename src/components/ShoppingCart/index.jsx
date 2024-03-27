@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import CartMeal from "../CartMeal";
 import CartMealVisible from "../CartMealVisible";
 
 import "./shoppingCart.css";
@@ -54,39 +53,40 @@ const ShoppingCart = ({ cart, setCart }) => {
 				{/* check if ther is at least one meal in cart
 				if not display line 117 and after */}
 				{mealsCart.length > 0 ? (
-					// if the cart is expend
+					// if the cart is not expend
+					// if the window is in "mobile" width size
+					// display a button to expend the cart
+					windowSize.innerWidth > mediaQuery768 ? (
+						<CartMealVisible
+							deliveryCost={deliveryCost}
+							mealsCart={mealsCart}
+							checkout={checkout}
+							setCart={setCart}
+							isCart={isCart}
+							setIsCart={setIsCart}
+						/>
+					) : // if the cart is expend
 					isCart ? (
 						<CartMealVisible
 							deliveryCost={deliveryCost}
 							mealsCart={mealsCart}
 							checkout={checkout}
 							setCart={setCart}
+							isCart={isCart}
 							setIsCart={setIsCart}
 						/>
-					) : // if the cart is not expend
-					// if the window is in "mobile" width size
-					// display a button to expend the cart
-					windowSize.innerWidth < mediaQuery768 ? (
-						// (setCart(false),
-						(console.log("tesdt"),
-						(
-							<>
-								<div id="item-in-cart">
-									<button onClick={() => setIsCart(true)}>
-										<div id="cart-resume">
-											<p>{totalMeals}</p>
-											<p>Voir le panier</p>
-											<p>{checkout} €</p>
-										</div>
-									</button>
-								</div>
-							</>
-						))
 					) : (
-						// if the cart is not expend
-						// if the window is not in "mobile" width size
-						// display the cart all the time
-						setIsCart(true)
+						<>
+							<div id="item-in-cart">
+								<button onClick={() => setIsCart(true)}>
+									<div id="cart-resume">
+										<p>{totalMeals}</p>
+										<p>Voir le panier</p>
+										<p>{checkout} €</p>
+									</div>
+								</button>
+							</div>
+						</>
 					)
 				) : (
 					// if there is no meals in cart

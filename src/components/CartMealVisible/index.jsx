@@ -7,6 +7,7 @@ const CartMealVisible = ({
 	mealsCart,
 	checkout,
 	setCart,
+	isCart,
 	setIsCart,
 }) => {
 	return (
