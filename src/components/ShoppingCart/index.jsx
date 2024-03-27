@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 import CartMeal from "../CartMeal";
 
@@ -43,7 +43,7 @@ const ShoppingCart = ({ cart, setCart }) => {
 	// mobile mode only
 	if (mealsCart.length > 0) {
 		mealsCart.map((meal) => {
-			totalMeals += meal.quantity;
+			return (totalMeals += meal.quantity);
 		});
 	}
 
@@ -104,21 +104,25 @@ const ShoppingCart = ({ cart, setCart }) => {
 					// if the window is in "mobile" width size
 					// display a button to expend the cart
 					windowSize.innerWidth < mediaQuery768 ? (
-						<>
-							<div id="item-in-cart">
-								<button onClick={() => setIsCart(true)}>
-									<div id="cart-resume">
-										<p>{totalMeals}</p>
-										<p>Voir le panier</p>
-										<p>{checkout} €</p>
-									</div>
-								</button>
-							</div>
-						</>
+						// (setCart(false),
+						(console.log("tesdt"),
+						(
+							<>
+								<div id="item-in-cart">
+									<button onClick={() => setIsCart(true)}>
+										<div id="cart-resume">
+											<p>{totalMeals}</p>
+											<p>Voir le panier</p>
+											<p>{checkout} €</p>
+										</div>
+									</button>
+								</div>
+							</>
+						))
 					) : (
 						// if the cart is not expend
 						// if the window is not in "mobile" width size
-						// display the cart at all time
+						// display the cart all the time
 						setIsCart(true)
 					)
 				) : (

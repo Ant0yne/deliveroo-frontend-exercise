@@ -1,7 +1,7 @@
 #cart {
 	width: 100%;
 	background-color: var(--white);
-	position: fixed;
+	position: sticky;
 	bottom: 0;
 	border-top: 2px solid var(--light-grey-b);
 }
