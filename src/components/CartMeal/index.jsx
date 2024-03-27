@@ -87,7 +87,6 @@ const CartMeal = ({ checkout, mealsCart, mealCart, setCart, setIsCart }) => {
 			const num = tempCheckout + mealCart.price;
 
 			tempCheckout = Number(num.toFixed(2));
-			console.log(tempCheckout, typeof tempCheckout);
 
 			setCart({
 				checkout: tempCheckout,
